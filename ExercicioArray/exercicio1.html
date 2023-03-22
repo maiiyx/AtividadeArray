@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Exercicio 01</title>
+</head>
+<body>
+
+    <main>
+        <section>
+
+            <article class="content">
+                <input type="text" id="texto" placeholder="Digite um objeto">
+                <aside>
+                    <button id="adicionar">Adicionar</button>
+                </aside>
+                <aside>
+                    <button id="ordenar">Ordenar</button>
+                </aside>
+            </article>
+
+        </section>
+
+        <aside id="error"></aside>
+
+    </main>
+   
+    <script>
+      var objetos = ['Cadeira', 'Impressora', 'Garfo'];
+
+
+      function adicionarObjeto() {
+        var input = document.getElementById("texto");
+        var valor = input.value.trim();
+        input.value = '';
+       
+        if (valor === '') {
+          alert("Informe um valor válido");
+          return 0;
+        }
+       
+        if (objetos.includes(valor)) {
+          alert("Objeto já foi adicionado");
+          return 0;
+        }
+       
+        objetos.push(valor);
+        console.log(objetos);
+      }
+
+
+      function ordenarObjetos() {
+        objetos.sort();
+        console.log(objetos);
+      }
+     
+      document.getElementById("adicionar").addEventListener("click", adicionarObjeto);
+      document.getElementById("ordenar").addEventListener("click", ordenarObjetos);
+    </script>
+
+</body>
+</html>
